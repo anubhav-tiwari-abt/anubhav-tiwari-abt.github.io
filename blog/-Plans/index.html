@@ -1,0 +1,109 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2022 Plans</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../../index.css"></head>
+  <body>
+    <div id="loading">
+      <div id="spinner"></div>
+    </div>
+    <a href="/" class="go_back"><i class="fas fa-arrow-left"></i></a>
+    <div id="background_overlay"></div>
+    <div id="background" style="background: url(top_image.jpeg) center;"></div>
+    <table id="profile_blog">
+      <tbody>
+        <tr>
+          <td style="width:8vw;"><div id="profile_img_blog"></div></td>
+          <td style="width:52vw;">
+            <div id="username_blog"></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="blog-display">
+      <h1 id="blog_title">2022 Plans</h1>
+      <h2 id="blog_sub_title">Getting back in the game</h2>
+      <div id="blog">
+        <p id="para_0_original">With the start of 2022, I'm leaving behind the rut of last 2 years (2020 and 2021).<br />
+          The lockdowns and job hunts really brought down my morale a lot and I felt <br />
+          like I've been stuck in a rut with my skills becoming stale and that I haven't been learning anything new, <br />
+          so with the start of 2022, I've decided to take up the skills that I feel are important and that I'm lagging behind on and work on them.
+        </p>
+        <p id="para_1_original">
+          C++ was my first programming language to which I was introduced to in school, <br />
+          but I didn't really create anything amazing or even a decent level individual project in C++.<br />
+          I've always liked the language, but my move from C++ to JavaScript and then to Python, <br />
+          took me away from the core of strongly typed and closer to the metal languages. <br />
+          During my career till now, I've faced situations where I felt like if I knew C++ a little better, <br />
+          I'd be more up to the standards, thus, I've decided to start from scratch on C++, <br />
+          going from beginner to advanced modern C++ and finally developing a project in C++.
+        </p>
+        <p id="para_2_original">
+          Another skill where I found myself struggling was SQL. I mean, I know SQL, but being unable to clear 3 interviews because of SQL skill requirement, I think it's better to start working on my SQL skills before I fail another interview.
+        </p>
+        <p id="para_3_original">
+          I was also unable to focus on my personal project because of several factors, and my GitHub profile was looking more full of unfinished projects and stale and abandoned projects, so I decided to go clean slate on that as well. I've some amazing new projects in mind and I wanted to start fresh on them on a fresh GitHub profile.
+        </p>
+        <p id="para_4_original">
+          I tried to create a branding of an organization of myself last year, but, what started with full excitement and aspirations, ended up being nothing more than that, a branding. I'm planning to things differently this year, make something first, brand and publish it later.
+        </p>
+        <p id="para_5_original">
+          Another major thing that I've been putting off for about 3 years now is a research publication, It isn't that easy, and I've in past found ways to put it on the shelf and not work on it, but I'm planning At least 1 research paper out of this year on one of my research interests.
+        </p>
+        <p id="">
+          So there we have it. New years (2022) plans :
+          <ol>
+            <li>Master and Make a project in C++(17+)</li>
+            <li>Master SQL</li>
+            <li>Create and Publish open source projects (At least 1 major release) on new GitHub profile.</li>
+            <li>Create a brand of yourself with everything above as a showcase.</li>
+            <li>At least one research paper.</li>
+          </ol><br />
+          Will do a year in review next year and frequent updates on each of the above 5 goals.
+        </p>
+      </div>
+    </div>
+    <div id="footer_blog">
+      <a href="https://github.com/anubhav-tiwari-abt" target="_blank">Made with 💗 by Anubhav</a>. <a href="https://github.com/imfunniee/gitfolio" target="_blank">⚡Powered by gitfolio</a>
+    </div>
+    <script type="text/javascript">
+      setTimeout(function() {
+        document.getElementById("loading").classList.add("animated");
+        document.getElementById("loading").classList.add("fadeOut");
+        setTimeout(function() {
+          document.getElementById("loading").classList.remove("animated");
+          document.getElementById("loading").classList.remove("fadeOut");
+          document.getElementById("loading").style.display = "none";
+        }, 800);
+      }, 1500);
+      $.getJSON("../../config.json", function(user) {
+        var icon = document.createElement("link");
+        icon.setAttribute("rel", "icon");
+        icon.setAttribute("href", user[0].userimg);
+        icon.setAttribute("type", "image/png");
+        document.getElementsByTagName("head")[0].appendChild(icon);
+        document.getElementById(
+          "profile_img_blog"
+        ).style.background = `url('${user[0].userimg}') center center`;
+        document.getElementById(
+          "username_blog"
+        ).innerHTML = `<span style="display:${
+          user[0].name == null || !user[0].name ? "none" : "block"
+        };">${user[0].name}</span>@${user[0].username}<b id="blog_time"></b>`;
+
+        if ((user[0].theme = "dark.css")) {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(10, 10, 10, 1), rgba(10, 10, 10, 0.1))";
+        } else {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.1))";
+        }
+      });
+    </script>
+  
+
+</body></html>
