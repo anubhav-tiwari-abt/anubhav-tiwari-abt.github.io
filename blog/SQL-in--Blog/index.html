@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SQL in 1 Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../../index.css"></head>
+  <body>
+    <div id="loading">
+      <div id="spinner"></div>
+    </div>
+    <a href="/" class="go_back"><i class="fas fa-arrow-left"></i></a>
+    <div id="background_overlay"></div>
+    <div id="background" style="background: url(top_image.png) center;"></div>
+    <table id="profile_blog">
+      <tbody>
+        <tr>
+          <td style="width:8vw;"><div id="profile_img_blog"></div></td>
+          <td style="width:52vw;">
+            <div id="username_blog"></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="blog-display">
+      <h1 id="blog_title">SQL in 1 Blog</h1>
+      <h2 id="blog_sub_title">All you need to know</h2>
+      <div id="blog"><p id="para_0_original">If you're in the field of data, no matter what your role is, whether it is a data scientist, data engineer, machine learning engineer etc., you'll have to, at some point, deal with tabular data or structured data.
+Big data is mostly stored in some form of database, and for ease of operation on the dataset, you need the right tools,
+and the main tool that you'll always need, is SQL.</p><p id="para_1_original">SQL or Structured Query Language, is an essential part of the data science toolkit, and it is essential to know how to write at least some basic queries.
+Here I'll try to go through most of the concepts with some SQL code and some sample problems that will cover all the SQL you need to know to write basic and some advanced queries. Expertise only comes with practice and day-to-day interaction with SQL will only improve the skills.</p><img src="img_0.png" alt="blog image 0" id="img_0_original"><p id="para_3_original"></p><h2>SQL Engines</h2>
+SQL comes in several, flavors if you will. Each adding some features on top of the SQL core. Some examples of common and popular engines are : 
+<ol>
+<li> MySQL </li>
+<li> Microsoft SQL Server </li>
+<li> Postgre SQL </li>
+<li> Oracle SQL Engine </li>
+<li> IBM SQL Engine </li>
+</ol>
+Here I'll be using MySQL for all the examples and will be explaining concepts with MySQL in mind.<p></p><p id="para_4_original"></p><h2>SQL Database</h2><p></p><p id="para_5_original"></p><h2>DDL and DML</h2><p></p><p id="para_6_original"></p><h2>Creating a database</h2><p></p><p id="para_7_original"></p><h2>Creating a Table</h2><p></p><p id="para_8_original"></p><h2>Querying a Table</h2><p></p><p id="para_9_original"></p><h2>Constraints</h2><p></p><p id="para_10_original"></p><h2>Joins</h2><p></p><p id="para_11_original"></p><h2>CRUD Operations</h2><p></p><p id="para_12_original"></p><h2>Transactional Nature Of Queries</h2><p></p><p id="para_13_original"></p><h2>Sub Queries</h2><p></p><p id="para_14_original"></p><h2>Functions and stored procedures</h2><p></p><p id="para_15_original"></p><h2>Variables</h2><p></p><p id="para_16_original"></p><h2>Views</h2><p></p><p id="para_17_original"></p><h2>Grouping and Aggregating</h2><p></p><p id="para_18_original"></p><h2>Practical Examples</h2><p></p><img src="img_1.jpeg" alt="blog image 1" id="img_1_original"><p id="para_19_original">Well, that was a lot of fun. Next will try to cover C++ in possibly 3 blogs. Till then, Ciao.</p></div>
+    </div>
+    <div id="footer_blog">
+      <a href="https://github.com/anubhav-tiwari-abt" target="_blank">Made with 💗 by Anubhav</a>. <a href="https://github.com/imfunniee/gitfolio" target="_blank">⚡Powered by gitfolio</a>
+    </div>
+    <script type="text/javascript">
+      setTimeout(function() {
+        document.getElementById("loading").classList.add("animated");
+        document.getElementById("loading").classList.add("fadeOut");
+        setTimeout(function() {
+          document.getElementById("loading").classList.remove("animated");
+          document.getElementById("loading").classList.remove("fadeOut");
+          document.getElementById("loading").style.display = "none";
+        }, 800);
+      }, 1500);
+      $.getJSON("../../config.json", function(user) {
+        var icon = document.createElement("link");
+        icon.setAttribute("rel", "icon");
+        icon.setAttribute("href", user[0].userimg);
+        icon.setAttribute("type", "image/png");
+        document.getElementsByTagName("head")[0].appendChild(icon);
+        document.getElementById(
+          "profile_img_blog"
+        ).style.background = `url('${user[0].userimg}') center center`;
+        document.getElementById(
+          "username_blog"
+        ).innerHTML = `<span style="display:${
+          user[0].name == null || !user[0].name ? "none" : "block"
+        };">${user[0].name}</span>@${user[0].username}<b id="blog_time"></b>`;
+
+        if ((user[0].theme = "dark.css")) {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(10, 10, 10, 1), rgba(10, 10, 10, 0.1))";
+        } else {
+          document.querySelector("#background_overlay").style.background =
+            "linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.1))";
+        }
+      });
+    </script>
+  
+
+</body></html>
